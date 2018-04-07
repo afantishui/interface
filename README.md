@@ -1,6 +1,6 @@
 # interface
 * 这个使用Python的requests模块做请求判断返回参数的自动化测试框架
-* 从automation_demo(https://github.com/afantishui/python_automation_demo)里面分离出来。
+* 从automation_demo里面分离出来。(https://github.com/afantishui/python_automation_demo)
 
 ## 所需环境
 * Python3
