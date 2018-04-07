@@ -1,0 +1,14 @@
+#项目名称
+project_name: '图灵接口测试'
+#接口版本
+interface_version: '1.0.1'
+#提交时间    
+submit_time: 2017-9-18
+#提交人
+submit_person: 张三
+#测试人员
+test_person: zhangsan,lisi
+#测试时间
+test_time: 2017-9-18
+#审核人
+check_person: 李四

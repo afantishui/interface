@@ -1,0 +1,8 @@
+#发送人
+fromemail: '824144294@qq.com'
+#这里是授权码，不是邮箱密码
+password: "xvsasdgwqcoubdic"
+#收件人
+toeamil: "3464625646@qq.com"
+#邮件标题
+title: "测试报告"
