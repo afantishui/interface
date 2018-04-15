@@ -21,7 +21,7 @@ def report_email():
 	filetime  = time.strftime("%Y%m%d%H%M%S", time.localtime(time.time())) #获取日期
 	path      = os.path.dirname(os.path.abspath('.')) #保存报告的相对路径
 	case_id_list,case_name_list,case_key_list,case_con_list,case_url_list,case_type_list,case_expect_list = getdata_excel(filepath1)
-	list_pass,list_fail,list_json,list_result = test_interface()
+	list_pass,list_fail,list_json,list_result,list_len = test_interface()
 	filepath = os.path.join(path + '\\test_report\\%s-interface-result.html' %filetime) #拼接报告保存路径
 	if os.path.exists(filepath) is False:
 		os.system(r'touch %s' % filepath)
@@ -42,7 +42,7 @@ def report_email():
 				yuqi      = case_expect_list,
 				json      = list_json,
 				relusts   = list_result)
-	#sendemail(filepath)
+	sendemail(filepath)
 
 def report_excel():
 
@@ -63,8 +63,8 @@ def report_excel():
 
 def tThread():
 	#参数target是一个可调用对象（也称为活动[activity]），在线程启动后执行
-	m=threading.Thread(target=report_excel,args=())
-	#m=threading.Thread(target=report_email,args=())
+	#m=threading.Thread(target=report_excel,args=())
+	m=threading.Thread(target=report_email,args=())
 	m.run()
 if __name__ == '__main__':
 	tThread()

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-import requests,json
+import requests
+import json
 import sys
 sys.path.append("..") 
 from lib.logger import Logger
