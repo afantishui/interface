@@ -38,7 +38,7 @@
 * 现在看回所写代码有些冗余，长时间未曾更新
 
 ### jenkins调试
-###方法一
+### 方法一
 * 下载至本地 
 * jenkins 构建 Execute Windows batch command
 * C:\Python34\python.exe D:\GitHub\interface\RunTest\InterfaceRuntest.py
