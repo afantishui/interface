@@ -2,6 +2,7 @@
 import logging
 import os.path
 import time
+import os
 
 class Logger(object):
 	"""docstring for Logger"""
@@ -20,6 +21,10 @@ class Logger(object):
 		log_path = os.path.dirname(os.path.abspath('.')) + '\\logs\\'  #项目根目录下/logs保存日志
 		#log_path = path + '\\logs\\'
 		log_name = log_path + rq + '.log'  #设置日志文件名
+		if not os.path.isfile(log_name):
+			f = open(log_name,'w')
+			f.close()   
+
 		fh = logging.FileHandler(log_name) #日志输出到文件
 		fh.setLevel(logging.INFO)  #设置日志显示等级CRITICAL > ERROR > WARNING > INFO > DEBUG > NOTSET
 

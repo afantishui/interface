@@ -15,10 +15,10 @@ from email.utils import formataddr,parseaddr
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 sys.path.append("..")
-from lib.logger import Logger
+# from lib.logger import Logger
 from interface.interface_method import Request
 
-logger = Logger(logger="lib").getlog()
+# logger = Logger(logger="lib").getlog()
 dir = os.path.dirname(os.path.abspath('.')) 
 #print(dir + "/config/email.yaml")
 #..\\testcases\\test_Data.xlsx
@@ -29,7 +29,7 @@ def sendemail(filepath):
 	import yaml
 	path = dir + "/config/email.yaml"
 
-	with open(r'..\\config\\email.yaml',"r",encoding='UTF-8') as f:
+	with open(r'D:\\GitHub\\interface\\config\\email.yaml',"r",encoding='UTF-8') as f:
 		datas = yaml.load(f)
 	#data_file = open(r".\\config\\email.yaml","r")
 	#datas = yaml.load(data_file)
@@ -57,10 +57,12 @@ def sendemail(filepath):
 		server = smtplib.SMTP_SSL("smtp.qq.com",465)
 		server.login(from_addr,password)
 		server.sendmail(from_addr,to_addr,msg.as_string())
-		logger.info('邮件发送成功')
+		print('邮件发送成功')
+		# logger.info('邮件发送成功')
 		server.quit()
 	except NameError as e:
-		logger.error("Failed to quit the browser with %s" % e)
+		print("Failed to quit the browser with %s" % e)
+		# logger.error("Failed to quit the browser with %s" % e)
 
 '''
 	判断方法
@@ -84,7 +86,6 @@ def assert_in(expect,json):
 	获取excel数据操作
 '''
 def getdata_excel(filepath):
-	#filepath = '..\\testcases\\inter_testcase.xlsx'
 	f = xlrd.open_workbook(filepath)
 	ex = f.sheets()[0]
 	nrows = ex.nrows
@@ -111,7 +112,11 @@ def getdata_excel(filepath):
 '''
 def save_result(time,total,passnum,fail):
 	try:
-		with open('..\\test_report\\result.txt','a') as f:
+		with open('D:\\GitHub\\interface\\test_report\\result.txt','a') as f:
 			f.write("%s|%s|%s|%s \n"%(time,total,passnum,fail))
 	except:
-		logger.info("'记录测试结果失败'")
+		print("'记录测试结果失败'")
+		# logger.info("'记录测试结果失败'")
+if __name__ == '__main__':
+
+	pass

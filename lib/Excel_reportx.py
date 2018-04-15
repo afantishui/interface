@@ -37,7 +37,7 @@ def pie(workbook,worksheet):
 
 #生成接口报告
 def create_interface_report(filename,list_len,list_pass,list_fail,listids,listnames,listkeys,listconeents,listurls,listtypes,listexpects,list_json,listresult):
-	filepath = open(r'..\\config\\report.yaml', encoding='utf-8')
+	filepath = open(r'D:\\GitHub\\interface\\config\\report.yaml', encoding='utf-8')
 	file_config = yaml.load(filepath)
 	#创建Excel文件
 	workbook = xlsxwriter.Workbook(filename)

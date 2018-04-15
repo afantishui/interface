@@ -3,9 +3,9 @@ import requests
 import json
 import sys
 sys.path.append("..") 
-from lib.logger import Logger
+# from lib.logger import Logger
 
-logger = Logger(logger="interface_method").getlog()
+# logger = Logger(logger="interface_method").getlog()
 
 class Request():
 	def __init__(self):
@@ -19,7 +19,8 @@ class Request():
 			json_response = json.loads(r.text) #str转成dict
 			return json_response
 		except Exception as e:
-			logger.info("get请求出错，出错原因:%s" %e)
+			# logger.info("get请求出错，出错原因:%s" %e)
+			print("get请求出错，出错原因:%s" %e)
 			return {}
 	#get请求类型
 	def post(self, url, params):
@@ -29,7 +30,8 @@ class Request():
 			json_response = json.loads(r.text) #str转成dict
 			return json_response
 		except Exception as e:
-			logger.info("post请求出错，出错原因:%s" %e)	
+			# logger.info("post请求出错，出错原因:%s" %e)	
+			print("post请求出错，出错原因:%s" %e)
 	#delete请求类型
 	def delfile(self, url, params):
 		try:
@@ -37,7 +39,8 @@ class Request():
 			json_response = json.loads(del_word.text)
 			return json_response
 		except Exception as e:
-			logger.info("delete请求出错，出错原因:%s" %e)
+			# logger.info("delete请求出错，出错原因:%s" %e)
+			print("delete请求出错，出错原因:%s" %e)
 			return {}
 
 	#put请求类型
@@ -48,7 +51,8 @@ class Request():
 			json_response = json.loads(r.text) #str转成dict
 			return json_response
 		except Exception as e :
-			logger.info("put请求出错，出错原因:%s" %e)
+			# logger.info("put请求出错，出错原因:%s" %e)
+			print("put请求出错，出错原因:%s" %e)
 			return {}
 
 reques = Request()
