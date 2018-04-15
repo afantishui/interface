@@ -38,4 +38,4 @@
 * 现在看回所写代码有些冗余，长时间未曾更新
 
 ### jenkins调试
-![Image text] (https://github.com/afantishui/interface/jk.png)
+![Image text](https://github.com/afantishui/interface/blob/master/jk.png)
